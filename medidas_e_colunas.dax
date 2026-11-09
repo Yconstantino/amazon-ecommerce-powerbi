@@ -1,0 +1,27 @@
+// Medidas — tabela E_commerce_Dataset_PT_BR
+
+Total Clientes = DISTINCTCOUNT(E_commerce_Dataset_PT_BR[ID_Cliente])
+
+// Total de pedidos. Era uma coluna calculada que repetia o total em cada linha;
+// virou medida para responder aos filtros e somar certo nos gráficos.
+Qtd_Vendas = COUNTROWS(E_commerce_Dataset_PT_BR)
+
+Lucro por Unidade =
+DIVIDE(
+    SUM(E_commerce_Dataset_PT_BR[Lucro]),
+    SUM(E_commerce_Dataset_PT_BR[Quantidade])
+)
+
+// Colunas calculadas
+
+Hora = HOUR(E_commerce_Dataset_PT_BR[Horario])
+
+// "1 - seg" ... "7 - dom": o número no início garante a ordem certa no eixo
+Dia_Semana =
+WEEKDAY(E_commerce_Dataset_PT_BR[Data_Pedido], 2) & " - " &
+FORMAT(E_commerce_Dataset_PT_BR[Data_Pedido], "ddd")
+
+// "01 - jan" ... "12 - dez"
+Mes =
+FORMAT(E_commerce_Dataset_PT_BR[Data_Pedido], "MM") & " - " &
+FORMAT(E_commerce_Dataset_PT_BR[Data_Pedido], "mmm")
