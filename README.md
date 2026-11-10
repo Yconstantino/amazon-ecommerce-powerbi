@@ -2,7 +2,7 @@
 
 Dashboard interativo e apresentação de insights sobre **51.290 pedidos** de um e-commerce em 2018.
 
-![Visão geral](imagens/slide-2.png)
+![Visão geral](slide-2.png)
 
 ## Perguntas de negócio
 
@@ -21,8 +21,8 @@ Dashboard interativo e apresentação de insights sobre **51.290 pedidos** de um
 
 | | |
 |---|---|
-| ![Login](imagens/slide-3.png) | ![Hora](imagens/slide-4.png) |
-| ![Data](imagens/slide-5.png) | ![Lucro](imagens/slide-6.png) |
+| ![Login](slide-3.png) | ![Hora](slide-4.png) |
+| ![Data](slide-5.png) | ![Lucro](slide-6.png) |
 
 ## Recomendações
 
@@ -33,28 +33,27 @@ Dashboard interativo e apresentação de insights sobre **51.290 pedidos** de um
 
 ## O dashboard
 
-O arquivo [`dashboard/Dashboard Amazon.pbix`](dashboard/) tem 4 páginas: Visão Geral, Tipo de Login, Data e Hora, e Lucro por Produto. Ele usa:
+O arquivo [`Dashboard Amazon.pbix`](Dashboard%20Amazon.pbix) tem 4 páginas: Visão Geral, Tipo de Login, Data e Hora, e Lucro por Produto. Ele usa:
 
 - tema escuro com as cores da Amazon (laranja `#FF9900` e azul `#00A8E1`);
 - 7 filtros sincronizados entre as páginas (período, categoria, dispositivo, gênero, login, forma de pagamento e prioridade);
-- medidas DAX próprias ([`dax/medidas_e_colunas.dax`](dax/medidas_e_colunas.dax)).
+- medidas DAX próprias ([`medidas_e_colunas.dax`](medidas_e_colunas.dax)).
 
 > O modelo aponta para um Excel local e para um SQL Server local. Para **atualizar** os dados é preciso ajustar as fontes em *Transformar dados*. Para só **visualizar**, basta abrir o arquivo no Power BI Desktop.
 
 ## Apresentação
 
-[`apresentacao/`](apresentacao/) tem a apresentação de 8 slides em PowerPoint (editável) e em PDF.
+Apresentação de 8 slides em [PowerPoint](Insights%20E-commerce%20Amazon.pptx) (editável) e em [PDF](Insights%20E-commerce%20Amazon.pdf).
 
 ## Ferramentas
 
 Power BI Desktop · DAX · SQL Server · Excel
 
-## Estrutura
+## Arquivos
 
-```
-├── dashboard/      → arquivo .pbix
-├── apresentacao/   → .pptx e .pdf com os insights
-├── dax/            → medidas e colunas calculadas
-└── imagens/        → slides usados neste README
-```
-
+| Arquivo | Conteúdo |
+|---|---|
+| `Dashboard Amazon.pbix` | Dashboard do Power BI |
+| `Insights E-commerce Amazon.pptx` / `.pdf` | Apresentação com os insights |
+| `medidas_e_colunas.dax` | Medidas e colunas calculadas |
+| `slide-1.png` … `slide-8.png` | Slides usados neste README |
